@@ -1,0 +1,48 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.4
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: env
+  one0:
+    docker:
+      - image: circleci/node:8.4
+    steps:
+      - run: env
+  one1:
+    docker:
+      - image: circleci/node:8.4
+    steps:
+      - run: env
+  test:
+    docker:
+      - image: circleci/node:8.4
+    steps:
+      - run: env
+  promote:
+    docker:
+      - image: circleci/node:8.4
+    steps:
+      - run: env
+
+workflows:
+  version: 2
+  cd_pipeline:
+    jobs:
+      - build
+      - one0:
+          requires:
+            - build
+      - one1:
+          requires:
+            - build
+      - test:
+          requires:
+            - one0
+            - one1
+      - promote:
+          requires:
+            - test
