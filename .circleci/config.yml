@@ -43,3 +43,7 @@ workflows:
           requires:
             - one0
             - one1
+
+notify:
+  webhooks:
+    - url: https://webhook-staging.atomist.services/circle/teams/T1L0VDKJP
