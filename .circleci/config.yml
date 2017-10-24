@@ -43,6 +43,3 @@ workflows:
           requires:
             - one0
             - one1
-      - promote:
-          requires:
-            - test
