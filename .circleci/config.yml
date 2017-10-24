@@ -46,4 +46,4 @@ workflows:
 
 notify:
   webhooks:
-    - url: https://webhook-staging.atomist.services/circle/teams/T1L0VDKJP
+    - url: https://webhook-staging.atomist.services/atomist/circle/teams/T1L0VDKJP
